@@ -14,14 +14,7 @@
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
-    "strict": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "target": "es2020",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "outDir": "./dist"
+    "strict": true
   },
-  "exclude": ["node_modules", "apps/**/node_modules", "dist", "**/dist", "**/*.config.mjs", "**/*.config.cjs"]
+  "exclude": ["node_modules"]
 }

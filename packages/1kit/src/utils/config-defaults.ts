@@ -1,5 +1,7 @@
 import { z } from "zod"
 
+import { TSFileManager } from "./file-manager"
+
 // Project configuration enums
 export const ProjectType = {
   NEXT: "next",
@@ -27,7 +29,9 @@ export const oneKitConfigSchema = z.object({
   auth: z.enum([AuthProvider.CLERK, AuthProvider.NEXT_AUTH, AuthProvider.NONE]),
 })
 
-export type OneKitConfig = z.infer<typeof oneKitConfigSchema>
+export type OneKitConfig = z.infer<typeof oneKitConfigSchema> & {
+  fileManager?: TSFileManager
+}
 
 export const defaultConfig: OneKitConfig = {
   projectName: "my-project",

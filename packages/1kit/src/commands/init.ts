@@ -2,7 +2,9 @@ import { Command } from "commander"
 
 import { oneKitConfigSchema } from "../utils/config-defaults"
 import { promptForConfig } from "../utils/config-prompts"
+import { setupAuth } from "../utils/creators/auth"
 import { createProject } from "../utils/creators/project"
+import { TSFileManager } from "../utils/file-manager"
 import { getPackageManager } from "../utils/get-package-manager"
 import { handleError } from "../utils/handle-error"
 import { highlighter } from "../utils/highlighter"
@@ -19,13 +21,22 @@ export const init = new Command()
       // Validate config against schema
       const validConfig = oneKitConfigSchema.parse(config)
 
+      // Initialize the file manager
+      const fileManager = new TSFileManager(validConfig.projectName)
+      const configWithManager = { ...validConfig, fileManager }
+
       // Detect package manager
       const packageManager = await getPackageManager(process.cwd(), {
         withFallback: true,
       })
 
       // Create the project based on the configuration
-      await createProject(validConfig, packageManager)
+      await createProject(configWithManager, packageManager)
+
+      // Setup authentication if configured
+      if (validConfig.auth !== "none") {
+        await setupAuth(configWithManager)
+      }
 
       logger.log(
         `${highlighter.success("Success!")} Project initialization completed.`

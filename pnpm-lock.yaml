@@ -114,9 +114,6 @@ importers:
 
   apps/www:
     dependencies:
-      1kit:
-        specifier: workspace:*
-        version: link:../../packages/1kit
       next:
         specifier: 15.3.3
         version: 15.3.3(@babel/core@7.27.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
