@@ -1,4 +1,4 @@
-import { OneKitConfig } from "../../config-defaults"
+import { OneKitConfig } from "../../utils/config-defaults"
 import { setupClerkAuth } from "./clerk"
 
 export enum AuthProvider {

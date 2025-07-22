@@ -33,10 +33,6 @@
     "typecheck": {},
     "dev": {
       "cache": false
-    },
-    "registry:build": {
-      "cache": false,
-      "outputs": []
     }
   }
 }

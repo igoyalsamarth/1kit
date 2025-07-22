@@ -1,4 +1,4 @@
-import { OneKitConfig } from "../../config-defaults"
+import { OneKitConfig } from "../../utils/config-defaults"
 import { createNextApp } from "./next"
 
 export async function createProject(

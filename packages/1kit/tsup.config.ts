@@ -3,7 +3,7 @@ import { defineConfig } from "tsup"
 export default defineConfig({
   clean: true,
   dts: true,
-  entry: ["src/index.ts", "src/registry/index.ts", "src/mcp/index.ts"],
+  entry: ["src/index.ts"],
   format: ["esm"],
   sourcemap: true,
   minify: true,
@@ -12,6 +12,10 @@ export default defineConfig({
   treeshake: true,
   banner: {
     js: `import { createRequire as topLevelCreateRequire } from 'module';
-const require = topLevelCreateRequire(import.meta.url);`,
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const require = topLevelCreateRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);`,
   },
 })

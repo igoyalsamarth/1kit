@@ -1,6 +1,6 @@
 import { execSync } from "child_process"
 
-import { OneKitConfig } from "../../config-defaults"
+import { OneKitConfig } from "../../utils/config-defaults"
 
 type PackageManager = "yarn" | "pnpm" | "bun" | "npm" | "deno"
 

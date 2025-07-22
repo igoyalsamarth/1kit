@@ -17,7 +17,14 @@ async function main() {
       "display the version number"
     )
 
+  // Add init as a subcommand
   program.addCommand(init)
+
+  // Make init the default action when no command is specified
+  program.action(async () => {
+    // Run the init command by default
+    await init.parseAsync(process.argv)
+  })
 
   program.parse()
 }

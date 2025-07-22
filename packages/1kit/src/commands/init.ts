@@ -1,9 +1,9 @@
 import { Command } from "commander"
 
+import { setupAuth } from "../creators/auth"
+import { createProject } from "../creators/project"
 import { oneKitConfigSchema } from "../utils/config-defaults"
 import { promptForConfig } from "../utils/config-prompts"
-import { setupAuth } from "../utils/creators/auth"
-import { createProject } from "../utils/creators/project"
 import { TSFileManager } from "../utils/file-manager"
 import { getPackageManager } from "../utils/get-package-manager"
 import { handleError } from "../utils/handle-error"
