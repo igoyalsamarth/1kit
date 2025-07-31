@@ -1,8 +1,13 @@
 import { Command } from "commander"
 
-import { setupAuth } from "../creators/auth"
 import { createProject } from "../creators/project"
-import { oneKitConfigSchema } from "../utils/config-defaults"
+import { setupAnalytics } from "../creators/typescript/next/analytics"
+import { setupAuth } from "../creators/typescript/next/auth"
+import {
+  AnalyticsProvider,
+  AuthProvider,
+  oneKitConfigSchema,
+} from "../utils/config-defaults"
 import { promptForConfig } from "../utils/config-prompts"
 import { TSFileManager } from "../utils/file-manager"
 import { getPackageManager } from "../utils/get-package-manager"
@@ -34,8 +39,13 @@ export const init = new Command()
       await createProject(configWithManager, packageManager)
 
       // Setup authentication if configured
-      if (validConfig.auth !== "none") {
+      if (validConfig.auth !== AuthProvider.NONE) {
         await setupAuth(configWithManager)
+      }
+
+      // Setup analytics if configured
+      if (validConfig.analytics !== AnalyticsProvider.NONE) {
+        await setupAnalytics(configWithManager)
       }
 
       logger.log(

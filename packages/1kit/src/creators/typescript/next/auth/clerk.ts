@@ -1,8 +1,8 @@
 import { Node, SyntaxKind } from "ts-morph"
 
-import { PackageConfig } from "../../types"
-import { OneKitConfig } from "../../utils/config-defaults"
-import { writePackages } from "../../utils/package-manager"
+import { PackageConfig } from "../../../../types"
+import { OneKitConfig } from "../../../../utils/config-defaults"
+import { writePackages } from "../../../../utils/package-manager"
 
 export async function setupClerkAuth(config: OneKitConfig) {
   const { projectName, fileManager } = config

@@ -1,6 +1,7 @@
 import prompts from "prompts"
 
 import {
+  AnalyticsProvider,
   AuthProvider,
   defaultConfig,
   OneKitConfig,
@@ -76,10 +77,33 @@ export async function promptForConfig(): Promise<OneKitConfig> {
         type: "select",
         name: "auth",
         message: "Which authentication provider would you like to use?",
+        choices: (values) => {
+          if (values.frameworkName === ProjectType.NEXT) {
+            return [
+              { title: "Clerk", value: AuthProvider.CLERK },
+              { title: "NextAuth.js", value: AuthProvider.NEXT_AUTH },
+              { title: "None", value: AuthProvider.NONE },
+            ]
+          } else {
+            return [
+              { title: "Clerk", value: AuthProvider.CLERK },
+              { title: "None", value: AuthProvider.NONE },
+            ]
+          }
+        },
+        initial: 0,
+      },
+      {
+        type: "select",
+        name: "analytics",
+        message: "Which analytics provider would you like to use?",
         choices: [
-          { title: "Clerk", value: AuthProvider.CLERK },
-          { title: "NextAuth.js", value: AuthProvider.NEXT_AUTH },
-          { title: "None", value: AuthProvider.NONE },
+          { title: "Mixpanel", value: AnalyticsProvider.MIXPANEL },
+          {
+            title: "Google Analytics",
+            value: AnalyticsProvider.GOOGLE_ANALYTICS,
+          },
+          { title: "None", value: AnalyticsProvider.NONE },
         ],
         initial: 0,
       },
@@ -104,6 +128,7 @@ export async function promptForConfig(): Promise<OneKitConfig> {
       turbopack: response.turbopack ?? defaultConfig.framework.turbopack,
     },
     auth: response.auth ?? defaultConfig.auth,
+    analytics: response.analytics ?? defaultConfig.analytics,
   }
 
   return config

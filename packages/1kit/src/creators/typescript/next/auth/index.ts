@@ -1,10 +1,5 @@
-import { OneKitConfig } from "../../utils/config-defaults"
+import { AuthProvider, OneKitConfig } from "../../../../utils/config-defaults"
 import { setupClerkAuth } from "./clerk"
-
-export enum AuthProvider {
-  CLERK = "clerk",
-  // Add more providers as needed
-}
 
 export async function setupAuth(config: OneKitConfig): Promise<boolean> {
   const { auth } = config

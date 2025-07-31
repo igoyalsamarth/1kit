@@ -14,6 +14,12 @@ export const AuthProvider = {
   NONE: "none",
 } as const
 
+export const AnalyticsProvider = {
+  MIXPANEL: "mixpanel",
+  GOOGLE_ANALYTICS: "google-analytics",
+  NONE: "none",
+} as const
+
 // Config schema
 export const oneKitConfigSchema = z.object({
   projectName: z.string(),
@@ -27,6 +33,11 @@ export const oneKitConfigSchema = z.object({
     turbopack: z.boolean(),
   }),
   auth: z.enum([AuthProvider.CLERK, AuthProvider.NEXT_AUTH, AuthProvider.NONE]),
+  analytics: z.enum([
+    AnalyticsProvider.MIXPANEL,
+    AnalyticsProvider.GOOGLE_ANALYTICS,
+    AnalyticsProvider.NONE,
+  ]),
 })
 
 export type OneKitConfig = z.infer<typeof oneKitConfigSchema> & {
@@ -45,4 +56,5 @@ export const defaultConfig: OneKitConfig = {
     turbopack: true,
   },
   auth: AuthProvider.CLERK,
+  analytics: AnalyticsProvider.MIXPANEL,
 }
