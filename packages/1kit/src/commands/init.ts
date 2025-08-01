@@ -3,9 +3,12 @@ import { Command } from "commander"
 import { createProject } from "../creators/project"
 import { setupAnalytics } from "../creators/typescript/next/analytics"
 import { setupAuth } from "../creators/typescript/next/auth"
+import { setupMonitoring } from "../creators/typescript/next/monitoring"
+import { setupServiceLayer } from "../creators/typescript/next/service-layer"
 import {
   AnalyticsProvider,
   AuthProvider,
+  MonitoringProvider,
   oneKitConfigSchema,
 } from "../utils/config-defaults"
 import { promptForConfig } from "../utils/config-prompts"
@@ -46,6 +49,16 @@ export const init = new Command()
       // Setup analytics if configured
       if (validConfig.analytics !== AnalyticsProvider.NONE) {
         await setupAnalytics(configWithManager)
+      }
+
+      // Setup monitoring if configured
+      if (validConfig.monitoring !== MonitoringProvider.NONE) {
+        await setupMonitoring(configWithManager)
+      }
+
+      // Setup service layer if configured
+      if (validConfig.serviceLayer) {
+        await setupServiceLayer(configWithManager)
       }
 
       logger.log(

@@ -1,6 +1,5 @@
 import {
   AnalyticsProvider,
-  AuthProvider,
   OneKitConfig,
 } from "../../../../utils/config-defaults"
 import { setupClientProvider } from "../client-provider"

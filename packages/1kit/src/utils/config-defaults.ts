@@ -20,6 +20,11 @@ export const AnalyticsProvider = {
   NONE: "none",
 } as const
 
+export const MonitoringProvider = {
+  SENTRY: "sentry",
+  NONE: "none",
+} as const
+
 // Config schema
 export const oneKitConfigSchema = z.object({
   projectName: z.string(),
@@ -38,6 +43,8 @@ export const oneKitConfigSchema = z.object({
     AnalyticsProvider.GOOGLE_ANALYTICS,
     AnalyticsProvider.NONE,
   ]),
+  monitoring: z.enum([MonitoringProvider.SENTRY, MonitoringProvider.NONE]),
+  serviceLayer: z.boolean(),
 })
 
 export type OneKitConfig = z.infer<typeof oneKitConfigSchema> & {
@@ -57,4 +64,6 @@ export const defaultConfig: OneKitConfig = {
   },
   auth: AuthProvider.CLERK,
   analytics: AnalyticsProvider.MIXPANEL,
+  monitoring: MonitoringProvider.SENTRY,
+  serviceLayer: true,
 }

@@ -4,6 +4,7 @@ import {
   AnalyticsProvider,
   AuthProvider,
   defaultConfig,
+  MonitoringProvider,
   OneKitConfig,
   ProjectType,
 } from "./config-defaults"
@@ -107,6 +108,22 @@ export async function promptForConfig(): Promise<OneKitConfig> {
         ],
         initial: 0,
       },
+      {
+        type: "select",
+        name: "monitoring",
+        message: "Which monitoring provider would you like to use?",
+        choices: [
+          { title: "Sentry", value: MonitoringProvider.SENTRY },
+          { title: "None", value: MonitoringProvider.NONE },
+        ],
+        initial: 0,
+      },
+      {
+        type: "toggle",
+        name: "serviceLayer",
+        message: "Would you like to use a service layer? (axios + react-query)",
+        initial: defaultConfig.serviceLayer,
+      },
     ],
     {
       onCancel: () => {
@@ -129,6 +146,8 @@ export async function promptForConfig(): Promise<OneKitConfig> {
     },
     auth: response.auth ?? defaultConfig.auth,
     analytics: response.analytics ?? defaultConfig.analytics,
+    monitoring: response.monitoring ?? defaultConfig.monitoring,
+    serviceLayer: response.serviceLayer ?? defaultConfig.serviceLayer,
   }
 
   return config
