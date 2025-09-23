@@ -36,8 +36,8 @@ export async function setupSentry(config: OneKitConfig) {
       /export default\s+[^;]+/,
       `// Make sure adding Sentry options is the last code to run before exporting
 export default withSentryConfig(nextConfig, {
-  org: "rush-studio",
-  project: "airloop",
+  org: "example-org",
+  project: "example-project",
 
   // Only print logs for uploading source maps in CI
   // Set to \`true\` to suppress logs

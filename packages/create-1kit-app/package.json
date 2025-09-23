@@ -7,13 +7,13 @@
   },
   "license": "MIT",
   "author": {
-    "name": "1kit",
-    "url": "https://1kit.dev"
+    "name": "goyalsamarth",
+    "url": "https://goyalsamarth.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rush-studio/1kit.git",
-    "directory": "packages/1kit"
+    "url": "https://github.com/igoyalsamarth/1kit.git",
+    "directory": "packages/create-1kit-app"
   },
   "files": [
     "dist"
