@@ -2,7 +2,7 @@ import { execSync } from "child_process"
 
 import { OneKitConfig } from "../../utils/config-defaults"
 
-type PackageManager = "yarn" | "pnpm" | "bun" | "npm" | "deno"
+type PackageManager = "yarn" | "pnpm" | "bun" | "npm"
 
 interface NextJSOptions {
   typescript: boolean

@@ -3,7 +3,7 @@ import { createNextApp } from "./next"
 
 export async function createProject(
   config: OneKitConfig,
-  packageManager: "yarn" | "pnpm" | "bun" | "npm" | "deno"
+  packageManager: "yarn" | "pnpm" | "bun" | "npm"
 ) {
   switch (config.framework.name.toLowerCase()) {
     case "next":

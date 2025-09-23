@@ -5,13 +5,13 @@ export async function getPackageManager(
   { withFallback }: { withFallback?: boolean } = {
     withFallback: false,
   }
-): Promise<"yarn" | "pnpm" | "bun" | "npm" | "deno"> {
+): Promise<"yarn" | "pnpm" | "bun" | "npm"> {
   const packageManager = await detect({ programmatic: true, cwd: targetDir })
 
   if (packageManager === "yarn@berry") return "yarn"
   if (packageManager === "pnpm@6") return "pnpm"
   if (packageManager === "bun") return "bun"
-  if (packageManager === "deno") return "deno"
+  if (packageManager === "deno") return "npm" // normalize unsupported to npm
   if (!withFallback) {
     return packageManager ?? "npm"
   }

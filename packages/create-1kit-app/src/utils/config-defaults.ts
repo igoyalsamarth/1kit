@@ -5,12 +5,12 @@ import { TSFileManager } from "./file-manager"
 // Project configuration enums
 export const ProjectType = {
   NEXT: "next",
-  VITE: "vite",
+  // VITE: "vite",
 } as const
 
 export const AuthProvider = {
   CLERK: "clerk",
-  NEXT_AUTH: "next-auth",
+  // NEXT_AUTH: "next-auth",
   NONE: "none",
 } as const
 
@@ -29,7 +29,7 @@ export const MonitoringProvider = {
 export const oneKitConfigSchema = z.object({
   projectName: z.string(),
   framework: z.object({
-    name: z.enum([ProjectType.NEXT, ProjectType.VITE]),
+    name: z.enum([ProjectType.NEXT]),
     typescript: z.boolean(),
     eslint: z.boolean(),
     tailwind: z.boolean(),
@@ -37,7 +37,7 @@ export const oneKitConfigSchema = z.object({
     importAlias: z.string(),
     turbopack: z.boolean(),
   }),
-  auth: z.enum([AuthProvider.CLERK, AuthProvider.NEXT_AUTH, AuthProvider.NONE]),
+  auth: z.enum([AuthProvider.CLERK, AuthProvider.NONE]),
   analytics: z.enum([
     AnalyticsProvider.MIXPANEL,
     AnalyticsProvider.GOOGLE_ANALYTICS,

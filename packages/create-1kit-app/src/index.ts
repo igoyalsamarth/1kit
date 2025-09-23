@@ -9,8 +9,10 @@ process.on("SIGTERM", () => process.exit(0))
 
 async function main() {
   const program = new Command()
-    .name("1kit")
-    .description("1kit is a CLI for creating and managing 1kit projects")
+    .name("create-1kit-app")
+    .description(
+      "Create a new 1kit project (Next.js/Vite) with optional integrations"
+    )
     .version(
       packageJson.version || "1.0.0",
       "-v, --version",

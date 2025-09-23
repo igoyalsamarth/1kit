@@ -24,7 +24,7 @@ export async function promptForConfig(): Promise<OneKitConfig> {
         message: "Which framework would you like to use?",
         choices: [
           { title: "Next.js", value: ProjectType.NEXT },
-          { title: "Vite", value: ProjectType.VITE },
+          // { title: "Vite", value: ProjectType.VITE },
         ],
         initial: 0,
       },
@@ -82,7 +82,7 @@ export async function promptForConfig(): Promise<OneKitConfig> {
           if (values.frameworkName === ProjectType.NEXT) {
             return [
               { title: "Clerk", value: AuthProvider.CLERK },
-              { title: "NextAuth.js", value: AuthProvider.NEXT_AUTH },
+              // { title: "NextAuth.js", value: AuthProvider.NEXT_AUTH },
               { title: "None", value: AuthProvider.NONE },
             ]
           } else {

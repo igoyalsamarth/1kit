@@ -1,5 +1,5 @@
 {
-  "name": "1kit",
+  "name": "create-1kit-app",
   "version": "0.0.1",
   "description": "1kit is a toolkit for building web applications.",
   "publishConfig": {
@@ -32,7 +32,7 @@
     }
   },
   "bin": {
-    "1kit": "./dist/index.js"
+    "create-1kit-app": "./dist/index.js"
   },
   "scripts": {
     "dev": "tsup --watch",
