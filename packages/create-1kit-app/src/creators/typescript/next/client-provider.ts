@@ -9,9 +9,21 @@ export async function setupClientProvider(config: OneKitConfig) {
     throw new Error("File manager instance not initialized")
   }
 
-  // Create client-provider.tsx file
-  await fileManager.createFile(
-    "providers/client-provider.tsx",
+  // Check if client-provider.tsx already exists
+  const clientProviderPath = "providers/client-provider.tsx"
+  try {
+    const existingFile = await fileManager.getOrCreateFile(clientProviderPath)
+    const content = existingFile.getFullText().trim()
+    if (content) {
+      return true
+    }
+  } catch {
+    // File doesn't exist or is empty, continue with creation
+  }
+
+  // Create the initial client provider file
+  const newFile = await fileManager.createFile(
+    clientProviderPath,
     `'use client'
 
 import { ReactNode } from 'react'
@@ -30,13 +42,29 @@ export function ClientProvider({ children }: ClientProviderProps) {
 `
   )
 
+  // Ensure the file is saved and formatted before continuing
+  await newFile.save()
+  await fileManager.formatFile(newFile)
+
   // Update layout.tsx with ClientProvider
   const layoutFile = await fileManager.getOrCreateFile("app/layout.tsx")
 
-  // Add ClientProvider import
-  await fileManager.addImports(layoutFile, [
-    { name: "ClientProvider", path: "@/providers/client-provider" },
-  ])
+  // Check if ClientProvider import already exists
+  const existingImports = layoutFile.getImportDeclarations()
+  const hasClientProviderImport = existingImports.some((importDecl) => {
+    const namedImports = importDecl.getNamedImports()
+    return (
+      namedImports.some((named) => named.getName() === "ClientProvider") &&
+      importDecl.getModuleSpecifierValue() === "@/providers/client-provider"
+    )
+  })
+
+  // Only add import if it doesn't exist
+  if (!hasClientProviderImport) {
+    await fileManager.addImports(layoutFile, [
+      { name: "ClientProvider", path: "@/providers/client-provider" },
+    ])
+  }
 
   // Find the body tag in the layout file
   const bodyTag = layoutFile
@@ -47,6 +75,19 @@ export function ClientProvider({ children }: ClientProviderProps) {
 
   if (!bodyTag) {
     throw new Error("Could not find body tag in layout file")
+  }
+
+  // Check if ClientProvider already exists
+  const existingClientProvider = layoutFile
+    .getDescendantsOfKind(SyntaxKind.JsxElement)
+    .find(
+      (node) =>
+        node.getOpeningElement().getTagNameNode().getText() === "ClientProvider"
+    )
+
+  if (existingClientProvider) {
+    // ClientProvider already exists, no need to add it again
+    return true
   }
 
   // Get the existing children of the body tag

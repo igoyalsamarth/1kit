@@ -80,12 +80,12 @@ export async function setupGoogleAnalytics(config: OneKitConfig) {
 
     if (firstChild) {
       // Insert GoogleTagManager before the first child
-      firstChild.replaceWithText(`<GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
+      firstChild.replaceWithText(`<GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
       ${firstChild.getText()}`)
     } else {
       // If no children, add GoogleTagManager as the only child
       jsxElement.setBodyText(`
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
     `)
     }
   }

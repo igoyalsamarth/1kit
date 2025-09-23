@@ -74,7 +74,7 @@ export default withSentryConfig(nextConfig, {
     `import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
-  dsn: "https://b2a85442ea33c0038171aff0c76d1036@o4509413315182592.ingest.de.sentry.io/4509689862619216",
+  dsn: process.env.NEXT_PUBLIC_SENTY_DSN,
 
   // Adds request headers and IP for users, for more info visit:
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/options/#sendDefaultPii
@@ -98,7 +98,7 @@ export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
     `import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
-  dsn: "https://b2a85442ea33c0038171aff0c76d1036@o4509413315182592.ingest.de.sentry.io/4509689862619216",
+  dsn: process.env.NEXT_PUBLIC_SENTY_DSN,
 
   // Adds request headers and IP for users, for more info visit:
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/options/#sendDefaultPii
@@ -122,7 +122,7 @@ export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
     `import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
-  dsn: "https://b2a85442ea33c0038171aff0c76d1036@o4509413315182592.ingest.de.sentry.io/4509689862619216",
+  dsn: process.env.NEXT_PUBLIC_SENTY_DSN,
 
   // Adds request headers and IP for users, for more info visit:
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/options/#sendDefaultPii

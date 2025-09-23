@@ -13,18 +13,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rush-studio/1kit"
+    "url": "https://github.com/igoyalsamarth/1kit"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "build:cli": "turbo --filter=create-1kit-app build",
     "dev": "turbo run dev --parallel",
-    "1kit:dev": "turbo --filter=create-1kit-app dev",
-    "1kit": "turbo --filter=create-1kit-app start:dev",
     "1kit:prod": "turbo --filter=create-1kit-app start:prod",
     "1kit:build": "turbo --filter=create-1kit-app build",
     "1kit:test": "turbo --filter=create-1kit-app test",
+    "create-1kit-app": "cd example && node ../packages/create-1kit-app/dist/index.js",
     "www:dev": "turbo --filter=www dev",
     "www:build": "turbo --filter=www build",
     "lint": "turbo run lint",
@@ -35,8 +34,8 @@
     "format:write": "turbo run format:write",
     "check": "turbo lint typecheck format:check",
     "release": "changeset version",
-    "pub:beta": "cd packages/1kit && pnpm pub:beta",
-    "pub:release": "cd packages/1kit && pnpm pub:release",
+    "pub:beta": "cd packages/create-1kit-app && pnpm pub:beta",
+    "pub:release": "cd packages/create-1kit-app && pnpm pub:release",
     "test": "turbo run test --filter=!create-1kit-app --force",
     "prepare": "husky"
   },

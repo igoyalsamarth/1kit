@@ -1,6 +1,7 @@
 import { Command } from "commander"
 
 import { setupEnv } from "../creators/env"
+import { setupGit } from "../creators/git"
 import { createProject } from "../creators/project"
 import { setupAnalytics } from "../creators/typescript/next/analytics"
 import { setupAuth } from "../creators/typescript/next/auth"
@@ -63,6 +64,8 @@ export const init = new Command()
       }
 
       await setupEnv(configWithManager)
+
+      await setupGit(configWithManager)
 
       logger.log(
         `${highlighter.success("Success!")} Project initialization completed.`

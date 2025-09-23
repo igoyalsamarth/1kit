@@ -77,8 +77,18 @@ export const queryClient = new QueryClient({
     throw new Error("Could not find return statement in ClientProvider")
   }
 
-  // Get the existing JSX content
-  const existingJsx = returnStatement.getExpression()?.getText() || ""
+  // Get the existing JSX content and remove any surrounding parentheses
+  const returnExpression = returnStatement.getExpression()
+  let existingJsx = ""
+  if (returnExpression) {
+    let unwrapped = returnExpression
+    // Unwrap nested ParenthesizedExpressions, if any
+    // e.g. return (<div />) -> <div />
+    while (Node.isParenthesizedExpression(unwrapped)) {
+      unwrapped = unwrapped.getExpression()
+    }
+    existingJsx = unwrapped.getText()
+  }
 
   // Create new JSX with QueryClientProvider wrapper
   const newJsx = `(
