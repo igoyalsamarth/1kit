@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "author": {
-    "name": "1kit",
-    "url": "https://1kit.dev"
+    "name": "goyalsamarth",
+    "url": "https://goyalsamarth.com"
   },
   "workspaces": [
     "apps/*",
