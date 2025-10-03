@@ -1,12 +1,12 @@
 import { execSync } from "child_process"
 
-import { OneKitConfig } from "../../utils/config-defaults"
+import { LintFormatProvider, OneKitConfig } from "../../utils/config-defaults"
 
 type PackageManager = "yarn" | "pnpm" | "bun" | "npm"
 
 interface NextJSOptions {
   typescript: boolean
-  eslint: boolean
+  eslint: (typeof LintFormatProvider)[keyof typeof LintFormatProvider]
   tailwind: boolean
   app: boolean
   srcDir: boolean
@@ -37,7 +37,13 @@ export async function createNextApp(
 
   const flags = [
     options.typescript ? "--typescript" : "--no-typescript",
-    options.eslint ? "--eslint" : "--no-eslint",
+    // Handle linting options
+    options.eslint === LintFormatProvider.ESLINT_PRETTIER ||
+    options.eslint === LintFormatProvider.ESLINT
+      ? "--eslint"
+      : "",
+    options.eslint === LintFormatProvider.BIOME ? "--biome" : "",
+    options.eslint === LintFormatProvider.NONE ? "--no-linter" : "",
     options.srcDir ? "--src-dir" : "--no-src-dir",
     options.app ? "--app" : "--pages",
     options.tailwind ? "--tailwind" : "--no-tailwind",
