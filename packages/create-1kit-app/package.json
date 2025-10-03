@@ -1,6 +1,6 @@
 {
   "name": "create-1kit-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "1kit is a toolkit for building web applications.",
   "publishConfig": {
     "access": "public"
