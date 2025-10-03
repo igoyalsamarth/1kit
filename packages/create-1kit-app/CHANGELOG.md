@@ -1,5 +1,11 @@
 # create-1kit-app
 
+## 0.3.0
+
+### Minor Changes
+
+- [#3](https://github.com/igoyalsamarth/1kit/pull/3) [`e6d05eb`](https://github.com/igoyalsamarth/1kit/commit/e6d05ebdc57b1c2112233164339229907215fc5d) Thanks [@igoyalsamarth](https://github.com/igoyalsamarth)! - Support for Prettier and Biome
+
 ## 0.2.0
 
 ### Minor Changes
