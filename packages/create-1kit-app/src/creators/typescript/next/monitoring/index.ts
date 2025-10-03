@@ -12,6 +12,8 @@ export async function setupMonitoring(config: OneKitConfig): Promise<boolean> {
   switch (monitoring) {
     case MonitoringProvider.SENTRY:
       return await setupSentry(config)
+    case MonitoringProvider.NONE:
+      return true
     default:
       throw new Error(`Monitoring provider ${monitoring} not supported`)
   }

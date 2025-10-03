@@ -23,6 +23,8 @@ export async function setupEnv(config: OneKitConfig): Promise<boolean> {
     case AnalyticsProvider.GOOGLE_ANALYTICS:
       await setupGoogleAnalyticsEnv(projectCwd)
       break
+    case AnalyticsProvider.NONE:
+      break
     default:
       throw new Error(`Analytics provider ${analytics} not supported`)
   }
@@ -30,6 +32,8 @@ export async function setupEnv(config: OneKitConfig): Promise<boolean> {
   switch (auth) {
     case AuthProvider.CLERK:
       await setupClerkEnv(projectCwd)
+      break
+    case AuthProvider.NONE:
       break
     default:
       throw new Error(`Auth provider ${auth} not supported`)
@@ -39,6 +43,8 @@ export async function setupEnv(config: OneKitConfig): Promise<boolean> {
     case MonitoringProvider.SENTRY:
       await setupSentryEnv(projectCwd)
       break
+    case MonitoringProvider.NONE:
+      break
     default:
       throw new Error(`Monitoring provider ${monitoring} not supported`)
   }
@@ -46,6 +52,8 @@ export async function setupEnv(config: OneKitConfig): Promise<boolean> {
   switch (serviceLayer) {
     case true:
       await setupApiEnv(projectCwd)
+      break
+    case false:
       break
     default:
       throw new Error(`Service layer ${serviceLayer} not supported`)
