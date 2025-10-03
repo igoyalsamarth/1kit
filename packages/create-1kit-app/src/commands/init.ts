@@ -5,6 +5,7 @@ import { setupGit } from "../creators/git"
 import { createProject } from "../creators/project"
 import { setupAnalytics } from "../creators/typescript/next/analytics"
 import { setupAuth } from "../creators/typescript/next/auth"
+import { setupMics } from "../creators/typescript/next/mics"
 import { setupMonitoring } from "../creators/typescript/next/monitoring"
 import { setupServiceLayer } from "../creators/typescript/next/service-layer"
 import {
@@ -19,6 +20,7 @@ import { getPackageManager } from "../utils/get-package-manager"
 import { handleError } from "../utils/handle-error"
 import { highlighter } from "../utils/highlighter"
 import { logger } from "../utils/logger"
+import { runInstall } from "../utils/run-install"
 
 export const init = new Command()
   .name("init")
@@ -63,9 +65,13 @@ export const init = new Command()
         await setupServiceLayer(configWithManager)
       }
 
+      await setupMics(configWithManager)
+
       await setupEnv(configWithManager)
 
       await setupGit(configWithManager)
+
+      await runInstall(packageManager)
 
       logger.log(
         `${highlighter.success("Success!")} Project initialization completed.`

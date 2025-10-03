@@ -18,7 +18,6 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
-    "build:cli": "turbo --filter=create-1kit-app build",
     "dev": "turbo run dev --parallel",
     "create-1kit-app:prod": "turbo --filter=create-1kit-app start:prod",
     "create-1kit-app:build": "turbo --filter=create-1kit-app build",

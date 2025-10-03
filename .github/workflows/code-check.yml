@@ -114,6 +114,6 @@ jobs:
         run: pnpm install
 
       - name: Build packages
-        run: pnpm --filter=create-1kit-app build
+        run: pnpm build
 
       - run: pnpm typecheck

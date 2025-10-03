@@ -8,6 +8,13 @@ export const ProjectType = {
   // VITE: "vite",
 } as const
 
+export const LintFormatProvider = {
+  ESLINT: "eslint",
+  ESLINT_PRETTIER: "eslint-prettier",
+  BIOME: "biome",
+  NONE: "none",
+} as const
+
 export const AuthProvider = {
   CLERK: "clerk",
   // NEXT_AUTH: "next-auth",
@@ -31,7 +38,12 @@ export const oneKitConfigSchema = z.object({
   framework: z.object({
     name: z.enum([ProjectType.NEXT]),
     typescript: z.boolean(),
-    eslint: z.boolean(),
+    eslint: z.enum([
+      LintFormatProvider.ESLINT,
+      LintFormatProvider.ESLINT_PRETTIER,
+      LintFormatProvider.BIOME,
+      LintFormatProvider.NONE,
+    ]),
     tailwind: z.boolean(),
     app: z.boolean(),
     importAlias: z.string(),
@@ -56,7 +68,7 @@ export const defaultConfig: OneKitConfig = {
   framework: {
     name: ProjectType.NEXT,
     typescript: true,
-    eslint: true,
+    eslint: LintFormatProvider.ESLINT,
     tailwind: true,
     app: true,
     importAlias: "@/*",
