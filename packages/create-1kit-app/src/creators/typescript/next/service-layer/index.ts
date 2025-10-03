@@ -7,9 +7,10 @@ export async function setupServiceLayer(
   config: OneKitConfig
 ): Promise<boolean> {
   const { serviceLayer } = config
-
-  await setupClientProvider(config)
-  await setupAxios(config)
-  await setupReactQuery(config)
+  if (serviceLayer) {
+    await setupClientProvider(config)
+    await setupAxios(config)
+    await setupReactQuery(config)
+  }
   return true
 }

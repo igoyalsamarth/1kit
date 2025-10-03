@@ -15,6 +15,8 @@ export async function setupAnalytics(config: OneKitConfig): Promise<boolean> {
       return await setupMixpanel(config)
     case AnalyticsProvider.GOOGLE_ANALYTICS:
       return await setupGoogleAnalytics(config)
+    case AnalyticsProvider.NONE:
+      return true
     default:
       throw new Error(`Analytics provider ${analytics} not supported`)
   }

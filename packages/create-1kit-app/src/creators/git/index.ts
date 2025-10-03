@@ -25,9 +25,8 @@ export async function setupGit(config: OneKitConfig): Promise<boolean> {
   // Initialize git repo and make first commit
   const { execSync } = childProcess
 
-  execSync("git init", { cwd: projectCwd })
+  execSync("git init --initial-branch=main", { cwd: projectCwd })
   execSync("git add .", { cwd: projectCwd })
-  execSync("git branch -M main", { cwd: projectCwd })
   execSync('git commit -m "Initial commit by create-1kit-app"', {
     cwd: projectCwd,
   })
