@@ -65,7 +65,7 @@ export const init = new Command()
         await setupServiceLayer(configWithManager)
       }
 
-      await setupMics(configWithManager)
+      await setupMics(configWithManager, packageManager)
 
       await setupEnv(configWithManager)
 
