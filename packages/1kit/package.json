@@ -1,6 +1,6 @@
 {
   "name": "1kit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "1kit CLI - A toolkit for modern web development",
   "publishConfig": {
     "access": "public"
