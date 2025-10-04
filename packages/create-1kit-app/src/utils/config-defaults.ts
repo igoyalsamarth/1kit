@@ -32,6 +32,12 @@ export const MonitoringProvider = {
   NONE: "none",
 } as const
 
+export const HuskyAndCommitLintProvider = {
+  HUSKY: "husky",
+  HUSKY_COMMIT_LINT: "husky-commit-lint",
+  NONE: "none",
+} as const
+
 // Config schema
 export const oneKitConfigSchema = z.object({
   projectName: z.string(),
@@ -57,6 +63,11 @@ export const oneKitConfigSchema = z.object({
   ]),
   monitoring: z.enum([MonitoringProvider.SENTRY, MonitoringProvider.NONE]),
   serviceLayer: z.boolean(),
+  huskyAndCommitLint: z.enum([
+    HuskyAndCommitLintProvider.HUSKY,
+    HuskyAndCommitLintProvider.HUSKY_COMMIT_LINT,
+    HuskyAndCommitLintProvider.NONE,
+  ]),
 })
 
 export type OneKitConfig = z.infer<typeof oneKitConfigSchema> & {
@@ -78,4 +89,5 @@ export const defaultConfig: OneKitConfig = {
   analytics: AnalyticsProvider.MIXPANEL,
   monitoring: MonitoringProvider.SENTRY,
   serviceLayer: true,
+  huskyAndCommitLint: HuskyAndCommitLintProvider.HUSKY_COMMIT_LINT,
 }

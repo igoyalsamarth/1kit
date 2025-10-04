@@ -4,6 +4,7 @@ import {
   AnalyticsProvider,
   AuthProvider,
   defaultConfig,
+  HuskyAndCommitLintProvider,
   LintFormatProvider,
   MonitoringProvider,
   OneKitConfig,
@@ -138,6 +139,20 @@ export async function promptForConfig(): Promise<OneKitConfig> {
         message: "Would you like to use a service layer? (axios + react-query)",
         initial: defaultConfig.serviceLayer,
       },
+      {
+        type: "select",
+        name: "huskyAndCommitLint",
+        message: "Would you like to use Husky and Commit Lint?",
+        choices: [
+          {
+            title: "Husky + Commit Lint",
+            value: HuskyAndCommitLintProvider.HUSKY_COMMIT_LINT,
+          },
+          { title: "Husky", value: HuskyAndCommitLintProvider.HUSKY },
+          { title: "None", value: HuskyAndCommitLintProvider.NONE },
+        ],
+        initial: 0,
+      },
     ],
     {
       onCancel: () => {
@@ -162,6 +177,8 @@ export async function promptForConfig(): Promise<OneKitConfig> {
     analytics: response.analytics ?? defaultConfig.analytics,
     monitoring: response.monitoring ?? defaultConfig.monitoring,
     serviceLayer: response.serviceLayer ?? defaultConfig.serviceLayer,
+    huskyAndCommitLint:
+      response.huskyAndCommitLint ?? defaultConfig.huskyAndCommitLint,
   }
 
   return config
