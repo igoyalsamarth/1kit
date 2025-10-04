@@ -1,0 +1,53 @@
+{
+  "name": "1kit",
+  "version": "0.0.1",
+  "description": "1kit CLI - A toolkit for modern web development",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "goyalsamarth",
+    "url": "https://goyalsamarth.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igoyalsamarth/1kit",
+    "directory": "packages/1kit"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "toolkit",
+    "web-development",
+    "1kit"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": "./dist/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}
