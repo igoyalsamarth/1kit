@@ -1,5 +1,11 @@
 # create-1kit-app
 
+## 0.4.0
+
+### Minor Changes
+
+- [#5](https://github.com/igoyalsamarth/1kit/pull/5) [`c79d4e3`](https://github.com/igoyalsamarth/1kit/commit/c79d4e30bff64b079a8398e151ea0b4bd42c3407) Thanks [@igoyalsamarth](https://github.com/igoyalsamarth)! - Add support for husky
+
 ## 0.3.0
 
 ### Minor Changes
