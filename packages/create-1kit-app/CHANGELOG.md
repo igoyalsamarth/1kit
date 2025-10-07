@@ -1,5 +1,11 @@
 # create-1kit-app
 
+## 0.5.0
+
+### Minor Changes
+
+- [#9](https://github.com/igoyalsamarth/1kit/pull/9) [`0b12570`](https://github.com/igoyalsamarth/1kit/commit/0b12570632bff2b1182116dcda214ec79b5e346b) Thanks [@igoyalsamarth](https://github.com/igoyalsamarth)! - Fixed Husky Pre-commit issue and install dependency in wrong place
+
 ## 0.4.0
 
 ### Minor Changes
