@@ -24,7 +24,7 @@ export async function setupSentry(config: OneKitConfig) {
 
   // Add Sentry import
   await fileManager.addImports(nextConfigFile, [
-    { name: "{ withSentryConfig }", path: "@sentry/nextjs" },
+    { name: "withSentryConfig", path: "@sentry/nextjs" },
   ])
 
   // Replace the export with Sentry-wrapped config
