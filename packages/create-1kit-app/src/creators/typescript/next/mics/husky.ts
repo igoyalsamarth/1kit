@@ -82,6 +82,10 @@ export async function setupHusky(
       cwd: projectRoot,
     })
 
+    const preCommitPath = path.join(projectRoot, ".husky", "pre-commit")
+    const preCommitContent = `${packageManager} run lint\n`
+    await fs.writeFile(preCommitPath, preCommitContent, { mode: 0o755 })
+
     // Setup commitlint if enabled
     if (withCommitLint) {
       logger.log("Setting up commitlint...")

@@ -71,7 +71,7 @@ export const init = new Command()
 
       await setupGit(configWithManager)
 
-      await runInstall(packageManager)
+      await runInstall(packageManager, validConfig.projectName)
 
       logger.log(
         `${highlighter.success("Success!")} Project initialization completed.`
