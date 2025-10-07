@@ -13,7 +13,7 @@ export async function setupClerkAuth(config: OneKitConfig) {
 
   // Install required dependencies
   const dependencies: PackageConfig[] = [
-    { name: "@clerk/nextjs", version: "^4.29.0" },
+    { name: "@clerk/nextjs", version: "^6.33.3" },
     { name: "@clerk/themes", version: "^1.7.9" },
   ]
 
@@ -23,11 +23,11 @@ export async function setupClerkAuth(config: OneKitConfig) {
   await fileManager.createFile(
     "middleware.ts",
     `import { authMiddleware } from '@clerk/nextjs'
- 
+
 export default authMiddleware({
   publicRoutes: ["/"]
 })
- 
+
 export const config = {
   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 }`

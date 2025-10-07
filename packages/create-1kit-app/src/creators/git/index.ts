@@ -27,7 +27,7 @@ export async function setupGit(config: OneKitConfig): Promise<boolean> {
 
   execSync("git init --initial-branch=main", { cwd: projectCwd })
   execSync("git add .", { cwd: projectCwd })
-  execSync('git commit -m "Initial commit by create-1kit-app"', {
+  execSync('git commit -m "Initial commit by create-1kit-app" --no-verify', {
     cwd: projectCwd,
   })
 
