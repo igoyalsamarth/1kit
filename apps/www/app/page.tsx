@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar';
-import Image from 'next/image';
 import Footer from '@/components/footer';
+import { BotIcon, ChartLineIcon, CodeIcon, DollarSignIcon, FingerprintIcon, Layers2Icon, MonitorIcon, SparklesIcon } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -36,141 +36,6 @@ export default function Home() {
               <span className="ml-1">→</span>
             </button>
           </div>
-
-          {/* Featured Kits Showcase */}
-          <div className="mt-20">
-            {/* Full Stack SAAS Kit - Flagship */}
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-10 shadow-md mb-10 relative overflow-hidden border border-gray-100">
-              <div className="absolute top-6 right-6 bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
-                Flagship
-              </div>
-              <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-                <div className="flex-1">
-                  <div className="w-full aspect-[16/10] bg-gray-100 rounded-lg overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
-                    <Image
-                      src="https://placehold.co/800x500/f3f4f6/d1d5db?text=Full+Stack+SAAS+Kit"
-                      alt="Full Stack SAAS Kit Interface"
-                      width={800}
-                      height={500}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-[-0.02em] leading-tight bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
-                    Full Stack SAAS Kit
-                  </h2>
-                  <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-                    Complete end-to-end solution for building production-ready SaaS applications with all essential features included.
-                  </p>
-                  <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <span className="bg-black text-white px-3 py-2 rounded-md text-xs font-medium flex items-center justify-center">NEXT.JS</span>
-                    <span className="bg-black text-white px-3 py-2 rounded-md text-xs font-medium flex items-center justify-center">TYPESCRIPT</span>
-                    <span className="bg-black text-white px-3 py-2 rounded-md text-xs font-medium flex items-center justify-center">TAILWIND CSS</span>
-                    <span className="bg-black text-white px-3 py-2 rounded-md text-xs font-medium flex items-center justify-center">STRIPE</span>
-                    <span className="bg-black text-white px-3 py-2 rounded-md text-xs font-medium flex items-center justify-center">AUTH.JS</span>
-                    <span className="bg-black text-white px-3 py-2 rounded-md text-xs font-medium flex items-center justify-center">PRISMA</span>
-                  </div>
-                  <div className="mt-8">
-                    <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
-                      Explore This Kit
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Other Kits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Dashboard Kit */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold">Dashboard Kit</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    A complete admin dashboard solution with analytics, user management, and customizable components.
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">NEXT.JS</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">TYPESCRIPT</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">TAILWIND</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* AI Kit */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold">AI Kit</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Build AI-powered applications with pre-built components for chat, image generation, and text analysis.
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">OPENAI</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">REACT</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">API</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Directory Kit */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold">Directory Kit</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Create powerful directory and listing platforms with search, filters, and booking functionality.
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">SEARCH</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">FILTERS</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">MAPS</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Data Product Kit */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold">Data Product Kit</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Build data-intensive applications with charts, tables, and advanced visualization components.
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">CHARTS</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">TABLES</span>
-                    <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">ANALYTICS</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -181,121 +46,126 @@ export default function Home() {
             Everything You Need to Launch Fast
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-[700px] mx-auto">
-            Our starter kits come with all the essential features to get your SaaS up and running quickly.
+            Our hyper modular CLI provides a collection of production-ready SaaS components that can be assembled into a complete application.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Authentication & User Management - Large Card */}
-          <div className="md:col-span-2 bg-gradient-to-br from-black to-gray-800 p-6 rounded-2xl text-white">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Authentication & User Management</h3>
-                <p className="text-gray-300 text-sm mb-3">
-                  Complete authentication system with social logins, email verification, and user profile management.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-white/10 px-2 py-1 rounded-full text-xs backdrop-blur-sm">OAuth</span>
-                  <span className="bg-white/10 px-2 py-1 rounded-full text-xs backdrop-blur-sm">JWT</span>
-                  <span className="bg-white/10 px-2 py-1 rounded-full text-xs backdrop-blur-sm">Roles</span>
-                </div>
-              </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
+              <CodeIcon className="h-6 w-6 text-white" />
+            </div>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Typescript & Javascript Support</h3>
+            <p className="text-gray-600 text-sm mb-3">
+              Comprehensive support for Typescript and Javascript both.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Typescript</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Javascript</span>
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
+              <FingerprintIcon className="h-6 w-6 text-white" />
+            </div>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Authentication & User Management</h3>
+            <p className="text-gray-600 text-sm mb-3">
+              Authentication and user management tools to help you get started with your application.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Clerk</span>
             </div>
           </div>
 
           {/* Subscription & Billing */}
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-              </svg>
+              <ChartLineIcon className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Subscription & Billing</h3>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Analytics & Reporting</h3>
             <p className="text-gray-600 text-sm mb-3">
-              Integrated payment processing with Stripe, subscription management, and usage-based billing.
+              Analytics and reporting tools to track user engagement, revenue metrics, and product usage.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Stripe</span>
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Recurring</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Mixpanel</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Google Analytics</span>
             </div>
           </div>
 
           {/* Analytics & Reporting */}
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
+              <MonitorIcon className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Analytics & Reporting</h3>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Monitoring & Error Tracking</h3>
             <p className="text-gray-600 text-sm mb-3">
-              Built-in analytics dashboard to track user engagement, revenue metrics, and product usage.
+              Monitoring and error tracking tools to help you catch and fix issues quickly.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Charts</span>
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Metrics</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Sentry</span>
             </div>
           </div>
 
-          {/* API & Webhooks */}
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+              <Layers2Icon className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-lg font-bold mb-2">API & Webhooks</h3>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Service Layer</h3>
             <p className="text-gray-600 text-sm mb-3">
-              RESTful API endpoints with authentication, rate limiting, and webhook integration.
+              A service layer is included to help you get started with your API.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">REST</span>
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Webhooks</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Axios</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">React Query</span>
             </div>
           </div>
 
           {/* Security & Compliance */}
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+              <BotIcon className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Security & Compliance</h3>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Git Hooks & Automation</h3>
             <p className="text-gray-600 text-sm mb-3">
-              Enterprise-grade security with GDPR compliance, data encryption, and audit logs.
+              Git hooks and automation to help you get started with your project.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">GDPR</span>
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Encryption</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Husky</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Commit Lint</span>
             </div>
           </div>
 
-          {/* Multi-tenancy - Large Card */}
-          <div className="md:col-span-2 bg-gradient-to-br from-gray-900 to-black p-6 rounded-2xl text-white">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Multi-tenancy Architecture</h3>
-                <p className="text-gray-300 text-sm mb-3">
-                  Serve multiple customers from a single instance with isolated data and customizable workspaces.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-white/10 px-2 py-1 rounded-full text-xs backdrop-blur-sm">Isolation</span>
-                  <span className="bg-white/10 px-2 py-1 rounded-full text-xs backdrop-blur-sm">Workspaces</span>
-                </div>
-              </div>
+          {/* Subscription & Billing */}
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
+              <SparklesIcon className="h-6 w-6 text-white" />
+            </div>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Formatter and Linter</h3>
+            <p className="text-gray-600 text-sm mb-3">
+              Formatter and linter to help you get started with your project.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Prettier</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Biome</span>
             </div>
           </div>
+
+          {/* Subscription & Billing */}
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4">
+              <DollarSignIcon className="h-6 w-6 text-white" />
+            </div>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Subscription & Billing</h3>
+            <p className="text-gray-600 text-sm mb-3">
+              Integrated payment processing with Stripe, subscription management, and usage-based billing.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">Stripe</span>
+            </div>
+          </div>
+
 
           {/* Email System */}
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
@@ -304,13 +174,12 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 className="text-lg font-bold mb-2">Email System</h3>
+            <h3 className="text-lg font-bold mb-2 text-gray-800">Email System</h3>
             <p className="text-gray-600 text-sm mb-3">
               Transactional email templates, newsletter management, and email verification workflows.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">Templates</span>
-              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs">SMTP</span>
+              <span className="bg-gray-100 px-2 py-1 rounded-full text-xs text-gray-800">loops</span>
             </div>
           </div>
         </div>
