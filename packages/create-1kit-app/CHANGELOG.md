@@ -1,5 +1,11 @@
 # create-1kit-app
 
+## 0.6.0
+
+### Minor Changes
+
+- [#12](https://github.com/igoyalsamarth/1kit/pull/12) [`7003f49`](https://github.com/igoyalsamarth/1kit/commit/7003f49b76e6cfaca565be6460020826a4d4d3a0) Thanks [@igoyalsamarth](https://github.com/igoyalsamarth)! - Fixed sentry import in next config, clerk version bump, initial commit with husky skipped
+
 ## 0.5.0
 
 ### Minor Changes
