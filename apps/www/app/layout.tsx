@@ -18,8 +18,8 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: '1Kit - Launch Production-Ready SaaS in Days',
-  description: '1Kit provides scalable & secure SaaS starter kits to accelerate your development. Save time, money & hassle with our production-grade templates.',
+  title: '1kit - Launch Production-Ready SaaS in Days',
+  description: '1kit provides scalable & secure SaaS starter kits to accelerate your development. Save time, money & hassle with our production-grade templates.',
 };
 
 export default function RootLayout({
