@@ -88,11 +88,23 @@ To run the CLI locally, you can follow the workflow:
 
 Build and execute the `create-1kit-app` script locally inside the `example` folder:
 
-   ```bash
-   pnpm run create-1kit-app
-   ```
+```bash
+pnpm run create-1kit-app
+```
 
 This workflow ensures that you are running the most recent version of the registry and testing the CLI properly in your local environment.
+
+## Changeset Creation
+
+This repository uses `changeset` to track and bump versions.
+
+After you are satisfied with your changes, run:
+
+```bash
+pnpm changeset
+```
+
+This bumps the version *(major/minor/patch)* and adds a release comment.
 
 ## Commit Convention
 
@@ -122,8 +134,6 @@ the following categories:
   e.g. `feat(create-1kit-app): add next.js page router support`
 
 If you are interested in the detailed specification you can visit [conventionalcommits.org](https://www.conventionalcommits.org) or check out the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
-
-*Also make sure that your `example` folder does not has any residues*
 
 ## Requests for new technologies
 
