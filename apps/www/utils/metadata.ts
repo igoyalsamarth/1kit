@@ -39,13 +39,15 @@ export const metadata = {
     siteName: '1kit',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/og.png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '1kit - Launch Production-Ready Project in Days',
     description:
       '1kit provides select-and-setup CLI to accelerate your development. Save time, money & hassle with the open-source toolkit.',
-    creator: '@goyalsamarth',
+    creator: '@igoyalsamarth',
+    images: [{ url: '/og.png' }],
   },
   robots: {
     index: true,
