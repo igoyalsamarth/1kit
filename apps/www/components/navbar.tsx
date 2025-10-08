@@ -1,5 +1,5 @@
-import { Circle } from 'lucide-react';
 import GithubStar from './github-star';
+import Image from 'next/image';
 
 export default async function Navbar() {
   return (
@@ -7,8 +7,7 @@ export default async function Navbar() {
       <nav className="max-w-7xl mx-auto bg-white/80 backdrop-blur-md px-6 py-4 rounded-full shadow-sm">
         <div className="flex items-center justify-between gap-10 mx-auto">
           <div className="flex items-center gap-2">
-            <Circle className="h-5 w-5 fill-black" />
-            <span className="text-lg font-bold text-black">1kit</span>
+            <Image src="/1kit.svg" alt="1kit" width={42} height={42} />
           </div>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex gap-6 text-sm text-gray-600">
