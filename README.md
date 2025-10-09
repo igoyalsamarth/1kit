@@ -2,7 +2,11 @@
 
 **Launch Production-Ready Project in Days**, Not Months
 
-![hero](apps/www/public/og.png)
+![hero](apps/www/public/1kit.gif)
+
+## Documentation
+
+Please read the [create-1kit-app documentation](/packages/create-1kit-app/README.md)
 
 ## Contributing
 
