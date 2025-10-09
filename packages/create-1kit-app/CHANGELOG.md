@@ -1,5 +1,11 @@
 # create-1kit-app
 
+## 0.6.1
+
+### Patch Changes
+
+- [#16](https://github.com/igoyalsamarth/1kit/pull/16) [`f53594b`](https://github.com/igoyalsamarth/1kit/commit/f53594b948692f0fea7df62bca10db8a13f5b42a) Thanks [@igoyalsamarth](https://github.com/igoyalsamarth)! - Adds README file
+
 ## 0.6.0
 
 ### Minor Changes
