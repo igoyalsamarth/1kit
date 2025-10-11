@@ -11,10 +11,11 @@ import {
   AnalyticsProvider,
   AuthProvider,
   HuskyAndCommitLintProvider,
+  LintFormatProvider,
   MonitoringProvider,
+  ProjectType,
   type OneKitConfig,
 } from "../../../src/utils/config-defaults"
-import * as envUtils from "../../../src/utils/env-utils"
 
 // Mock all env setup functions
 vi.mock("../../../src/creators/env/api_url")
@@ -25,21 +26,12 @@ vi.mock("../../../src/creators/env/sentry")
 vi.mock("../../../src/utils/env-utils")
 
 describe("env creators", () => {
-  const defaultProjectPath = path.resolve(
-    __dirname,
-    "../../fixtures/creator-env/project-default"
-  )
-  const allFeaturesProjectPath = path.resolve(
-    __dirname,
-    "../../fixtures/creator-env/project-all-features"
-  )
-
   const defaultConfig: OneKitConfig = {
     projectName: "project-default",
     framework: {
-      name: "next",
+      name: ProjectType.NEXT,
       typescript: true,
-      eslint: "eslint",
+      eslint: LintFormatProvider.ESLINT,
       tailwind: true,
       app: true,
       importAlias: "@/*",
