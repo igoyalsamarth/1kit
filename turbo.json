@@ -29,6 +29,10 @@
     "typecheck": {},
     "dev": {
       "cache": false
+    },
+    "test": {
+      "cache": false,
+      "outputs": []
     }
   }
 }

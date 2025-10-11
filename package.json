@@ -35,7 +35,7 @@
     "release": "changeset version",
     "pub:beta": "cd packages/create-1kit-app && pnpm pub:beta",
     "pub:release": "cd packages/create-1kit-app && pnpm pub:release",
-    "test": "turbo run test --filter=!create-1kit-app --force",
+    "test": "turbo run test --filter=!1kit --force",
     "prepare": "husky"
   },
   "keywords": [],
