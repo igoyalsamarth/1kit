@@ -26,9 +26,15 @@
     "format:write": {
       "outputs": []
     },
-    "typecheck": {},
+    "typecheck": {
+      "outputs": []
+    },
     "dev": {
       "cache": false
+    },
+    "test": {
+      "cache": false,
+      "outputs": []
     }
   }
 }

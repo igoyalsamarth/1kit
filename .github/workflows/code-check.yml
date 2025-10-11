@@ -113,7 +113,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build packages
-        run: pnpm build
-
       - run: pnpm typecheck
